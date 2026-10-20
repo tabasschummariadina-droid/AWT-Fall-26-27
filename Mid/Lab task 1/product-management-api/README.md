@@ -28,9 +28,7 @@ The following technologies have been used in this project:
 
 A PostgreSQL database named `krown_dex_db` is used for this project.
 
-The database connection settings are stored in the `.env` file. To configure the project, the `.env.example` file should be copied into a new file named `.env`. The database username and password should then be updated according to the local PostgreSQL configuration.
 
-The actual `.env` file should not be uploaded to GitHub because it may contain sensitive information.
 
 ## Installation and Setup
 
@@ -38,15 +36,15 @@ Before running the project, Node.js, PostgreSQL, and pnpm should be installed.
 
 The project dependencies can be installed by running the following command in the project directory:
 
-```bash
+bash
 pnpm install
-```
+
 
 After the environment variables have been configured, the development server can be started using:
 
-```bash
+bash
 pnpm start:dev
-```
+
 
 The API server is available at:
 
@@ -76,14 +74,14 @@ The following endpoints have been implemented:
 
 Example request body:
 
-```json
+json
 {
   "name": "Notebook",
   "category": "Stationery",
   "price": 120,
   "quantity": 10
 }
-```
+
 
 ## Employee API
 
@@ -111,7 +109,7 @@ The following endpoints have been implemented:
 
 Example request body:
 
-```json
+json
 {
   "name": "Karim Hasan",
   "email": "karim@example.com",
@@ -120,7 +118,7 @@ Example request body:
   "age": 25,
   "yearsOfWorking": 2
 }
-```
+
 
 ## API Testing
 
@@ -130,7 +128,7 @@ Screenshots of the API requests and responses have been included in the `screens
 
 ## Project Structure
 
-```text
+text
 product-management-api/
 ├── screenshots/
 ├── src/
