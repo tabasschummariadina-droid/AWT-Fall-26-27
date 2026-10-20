@@ -1,4 +1,4 @@
-# Lab Task 1: Product Management API and Employee API
+# Lab Task 1: Product and Employee API
 
 ## Student Information
 
@@ -7,15 +7,13 @@
 - **Section:** E
 - **Course:** Advanced Programming in Web Technology
 
-## Project Overview
+## Introduction
 
-As part of this lab task, two REST APIs have been developed using NestJS, TypeScript, and PostgreSQL. The Product API has been created to manage product information, while the Employee API has been developed to manage employee information.
+In this lab task, two APIs have been developed using NestJS, TypeScript, and PostgreSQL. One API is used to manage products, and the other is used to manage employees.
 
-Create, Read, Update, and Delete (CRUD) operations have been implemented for both APIs.
+CRUD operations have been implemented for both APIs.
 
 ## Technologies Used
-
-The following technologies have been used in this project:
 
 - Node.js
 - NestJS
@@ -24,111 +22,77 @@ The following technologies have been used in this project:
 - TypeORM
 - Postman
 
-## Database Configuration
+## Database Setup
 
-A PostgreSQL database named `krown_dex_db` is used for this project.
+A PostgreSQL database named `krown_dex_db` is used.
 
+## How to Run the Project
 
+First, install the required dependencies:
 
-## Installation and Setup
-
-Before running the project, Node.js, PostgreSQL, and pnpm should be installed.
-
-The project dependencies can be installed by running the following command in the project directory:
-
-bash
+```bash id="45okfk"
 pnpm install
+```
 
+Then, configure the `.env` file and start the server:
 
-After the environment variables have been configured, the development server can be started using:
-
-bash
+```bash id="8wd3nj"
 pnpm start:dev
+```
 
-
-The API server is available at:
+The server runs at:
 
 `http://localhost:5000`
 
 ## Product API
 
-The Product API has been developed to manage product information.
+The following information is stored for each product:
 
-The following fields are included:
+- ID
+- Name
+- Category
+- Price
+- Quantity
 
-- `id`: A unique ID generated automatically for each product
-- `name`: The name of the product
-- `category`: The category of the product
-- `price`: The price of the product
-- `quantity`: The available quantity of the product
+The following operations are supported:
 
-The following endpoints have been implemented:
-
-| HTTP Method | Endpoint | Purpose |
+| Method | Endpoint | Purpose |
 |---|---|---|
-| POST | `/products` | A new product is created |
-| GET | `/products` | All products are retrieved |
-| GET | `/products/:id` | A product is retrieved by ID |
-| PATCH | `/products/:id` | Product information is updated |
-| DELETE | `/products/:id` | A product is deleted |
-
-Example request body:
-
-json
-{
-  "name": "Notebook",
-  "category": "Stationery",
-  "price": 120,
-  "quantity": 10
-}
-
+| POST | `/products` | Create a product |
+| GET | `/products` | Get all products |
+| GET | `/products/:id` | Get a product by ID |
+| PATCH | `/products/:id` | Update a product |
+| DELETE | `/products/:id` | Delete a product |
 
 ## Employee API
 
-The Employee API has been developed to manage employee information.
+The following information is stored for each employee:
 
-The following fields are included:
+- ID
+- Name
+- Email
+- Phone
+- Password (dummy data)
+- Age
+- Years of working experience
 
-- `id`: A unique ID generated automatically for each employee
-- `name`: The name of the employee
-- `email`: The email address of the employee
-- `phone`: The phone number of the employee
-- `password`: A dummy password used for this lab task
-- `age`: The age of the employee
-- `yearsOfWorking`: The employee's years of working experience
+The following operations are supported:
 
-The following endpoints have been implemented:
-
-| HTTP Method | Endpoint | Purpose |
+| Method | Endpoint | Purpose |
 |---|---|---|
-| POST | `/employees` | A new employee is created |
-| GET | `/employees` | All employees are retrieved |
-| GET | `/employees/:id` | An employee is retrieved by ID |
-| PATCH | `/employees/:id` | Employee information is updated |
-| DELETE | `/employees/:id` | An employee is deleted |
+| POST | `/employees` | Create an employee |
+| GET | `/employees` | Get all employees |
+| GET | `/employees/:id` | Get an employee by ID |
+| PATCH | `/employees/:id` | Update an employee |
+| DELETE | `/employees/:id` | Delete an employee |
 
-Example request body:
+## Testing
 
-json
-{
-  "name": "Karim Hasan",
-  "email": "karim@example.com",
-  "phone": "01812345678",
-  "password": "dummy123",
-  "age": 25,
-  "yearsOfWorking": 2
-}
-
-
-## API Testing
-
-Both APIs were tested locally using Postman. The create, retrieve, update, and delete operations were checked for products and employees.
-
-Screenshots of the API requests and responses have been included in the `screenshots/` directory as evidence of the testing process.
+Both APIs were tested using Postman. All CRUD operations were checked, and screenshots of the requests and responses were saved in the `screenshots/` folder.
 
 ## Project Structure
 
-text
+```text id="5h9vmb"
 product-management-api/
 ├── screenshots/
 ├── src/
@@ -136,14 +100,5 @@ product-management-api/
 ├── .gitignore
 ├── package.json
 ├── pnpm-lock.yaml
-├── README.md
-├── nest-cli.json
-└── tsconfig.json
+└── README.md
 ```
-
-## Notes
-
-- The `.env` file should be kept private and should not be committed to GitHub.
-- The `.env.example` file has been included to show the required environment variables.
-- The employee password is used as dummy data for educational purposes.
-
